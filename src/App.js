@@ -20,7 +20,10 @@ const DataAnalysisPage = React.lazy(() => import('pages/DataAnalysisPage'));
 const MLModelsPage = React.lazy(() => import('pages/MLModelsPage'));
 const CreateModelPage = React.lazy(() => import('pages/CreateModelPage'));
 const ProcessModelPage = React.lazy(() => import('pages/ProcessModelPage'));
+const DLModelsPage = React.lazy(() => import('pages/DLModelsPage'));
+const EvaluateModelsPage = React.lazy(() => import('pages/EvaluateModelsPage'));
 const EvaluationPage = React.lazy(() => import('pages/EvaluationPage'));
+const PresentationPage = React.lazy(() => import('pages/PresentationPage'));
 const SettingsPage = React.lazy(() => import('pages/SettingsPage'));
 
 const getBasename = () => {
@@ -63,7 +66,10 @@ class App extends React.Component {
                 <Route exact path="/MLModelsPage" component={MLModelsPage} />
                 <Route exact path="/CreateModelPage" component={CreateModelPage} />
                 <Route exact path="/ProcessModelPage" component={ProcessModelPage} />
+                <Route exact path="/DLModelsPage" component={DLModelsPage} />
+                <Route exact path="/EvaluateModelsPage" component={EvaluateModelsPage} />
                 <Route exact path="/EvaluationPage" component={EvaluationPage} />
+                <Route exact path="/PresentationPage" component={PresentationPage} />
                 <Route exact path="/SettingsPage" component={SettingsPage} />
               </React.Suspense>
             </MainLayout>
