@@ -9,6 +9,8 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteSweepIcon from '@material-ui/icons/DeleteSweep';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import {Redirect } from 'react-router-dom';
+import DbTable from 'components/DbTable'
+
 
 class CreateUseCasePage extends React.Component {
   componentDidMount() {
@@ -41,9 +43,8 @@ class CreateUseCasePage extends React.Component {
         <Row>
           <Col>
             <Card className="mb-3">
-              <CardHeader>Use Cases
+              <CardHeader>
                 {this.renderRedirect()}
-                &nbsp;&nbsp;&nbsp;&nbsp;
                   <Button outline color="secondary" onClick={this.setRedirect}>Add New Use Case</Button>
                   <IconButton aria-label="delete" className="float-right" color="primary">
                     <DeleteSweepIcon/>
@@ -56,24 +57,7 @@ class CreateUseCasePage extends React.Component {
                   </IconButton>
               </CardHeader>
               <CardBody>
-                <Table responsive>
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Name</th>
-                      <th>Department</th>
-                      <th>Data Load</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Use Case 1</td>
-                    <td>Safety</td>
-                    <td>Web API</td>
-                  </tr>
-                  </tbody>
-                </Table>
+                <DbTable/>
               </CardBody>
             </Card>
           </Col>
