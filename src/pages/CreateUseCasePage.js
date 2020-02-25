@@ -3,13 +3,8 @@ import React from 'react';
 import { Card, CardBody,  CardHeader,  Col,  Row,
   Table, Button, Progress
   } from 'reactstrap';
-
-import IconButton from '@material-ui/core/IconButton';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteSweepIcon from '@material-ui/icons/DeleteSweep';
-import VisibilityIcon from '@material-ui/icons/Visibility';
 import {Redirect } from 'react-router-dom';
-import DbTable from 'components/DbTable'
+import DbTableCreateUseCase from 'components/DbTableCreateUseCase'
 
 
 class CreateUseCasePage extends React.Component {
@@ -46,18 +41,9 @@ class CreateUseCasePage extends React.Component {
               <CardHeader>
                 {this.renderRedirect()}
                   <Button outline color="secondary" onClick={this.setRedirect}>Add New Use Case</Button>
-                  <IconButton aria-label="delete" className="float-right" color="primary">
-                    <DeleteSweepIcon/>
-                  </IconButton>
-                  <IconButton aria-label="view" className="float-right" color="primary">
-                    <VisibilityIcon/>
-                  </IconButton>
-                  <IconButton aria-label="edit" className="float-right" color="primary">
-                    <EditIcon/>
-                  </IconButton>
               </CardHeader>
               <CardBody>
-                <DbTable/>
+                <DbTableCreateUseCase/>
               </CardBody>
             </Card>
           </Col>

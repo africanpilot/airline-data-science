@@ -44,7 +44,7 @@ function getStepContent(stepIndex) {
             <option></option>
             <option>Safety</option>
             <option>Flight Operations</option>
-            <option>M&E</option>
+            <option>ME</option>
           </Input>
         </FormGroup>
       );

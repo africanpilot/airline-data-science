@@ -84,7 +84,7 @@ render() {
               <CardBody>
               <UncontrolledDropdown>
                 <DropdownToggle caret outline color="secondary">
-                  Dropdown
+                  Connection
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem onClick={this.setRedirectCsv}>CSV</DropdownItem>

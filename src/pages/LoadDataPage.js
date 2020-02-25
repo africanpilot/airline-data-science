@@ -3,13 +3,9 @@ import React from 'react';
 import { Card, CardBody,  CardHeader,  Col,  Row,
   Table, Button
   } from 'reactstrap';
-import IconButton from '@material-ui/core/IconButton';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteSweepIcon from '@material-ui/icons/DeleteSweep';
-import VisibilityIcon from '@material-ui/icons/Visibility';
 import {Redirect } from 'react-router-dom';
 import StickyHeadTable from 'components/StickyHeadTable';
-// import MaterialTableDemo from 'components/MaterialTableDemo';
+import DbTableDataLoad from 'components/DbTableDataLoad';
 
 class LoadDataPage extends React.Component {
   componentDidMount() {
@@ -42,41 +38,12 @@ class LoadDataPage extends React.Component {
         <Row>
           <Col>
             <Card className="mb-3">
-              <CardHeader>Current Data Loads
+              <CardHeader>
               {this.renderRedirect()}
-              &nbsp;&nbsp;&nbsp;&nbsp;
                 <Button outline color="secondary" onClick={this.setRedirect}>Add New Data</Button>
-                  <IconButton aria-label="delete" className="float-right" color="primary">
-                    <DeleteSweepIcon/>
-                  </IconButton>
-                  <IconButton aria-label="view" className="float-right" color="primary">
-                    <VisibilityIcon/>
-                  </IconButton>
-                  <IconButton aria-label="edit" className="float-right" color="primary">
-                    <EditIcon/>
-                  </IconButton>
               </CardHeader>
               <CardBody>
-                <Table responsive>
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Name</th>
-                      <th>Project</th>
-                      <th>Type of Data</th>
-                      <th>Location</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Test1</td>
-                    <td>Global</td>
-                    <td>CSV</td>
-                    <td>'path.csv'</td>
-                  </tr>
-                  </tbody>
-                </Table>
+                <DbTableDataLoad/>
               </CardBody>
             </Card>
           </Col>

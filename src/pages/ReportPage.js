@@ -1,22 +1,16 @@
 import Page from 'components/Page';
-import React, { useState } from 'react';
-import { Card, CardBody,  CardHeader,  Col,  Row,
-  Table, Button, Form, Input, Label, FormGroup
+import React from 'react';
+import { Card, CardBody, Col,  Row,
+  Table, Button
   } from 'reactstrap';
+import MenuQualityControl from 'components/MenuQualityControl';
+import IconButton from '@material-ui/core/IconButton';
+import CardHeader from '@material-ui/core/CardHeader';
+import ModalQualityControl from 'components/ModalQualityControl';
 
 // const today = new Date();
 
 const ReportPage = (props) => {
-
-    const [setBackdrop] = useState(true);
-
-    const changeBackdrop = e => {
-      let value = e.target.value;
-      if (value !== '') {
-        value = JSON.parse(value);
-      }
-      setBackdrop(value);
-    }
 
     return (
       <Page
@@ -27,50 +21,8 @@ const ReportPage = (props) => {
       <Row>
         <Col xl={25} lg={12} md={12}>
           <Card>
-            <CardHeader>Quality Control Report</CardHeader>
               <CardBody>
-              <Form>
-                <div>
-                <Form inline onSubmit={(e) => e.preventDefault()}>
-                    <FormGroup>
-                      <Label for="backdrop">Project</Label>{' '}
-                      <Input type="select" name="backdrop" id="backdrop" onChange={changeBackdrop}>
-                        <option></option>
-                        <option>Project1</option>
-                        <option>Project2</option>
-                        <option>Project3</option>
-                      </Input>
-                    </FormGroup>
-                    <FormGroup>
-                      <Label for="backdrop">Data Load</Label>{' '}
-                      <Input type="select" name="backdrop" id="backdrop" onChange={changeBackdrop}>
-                        <option></option>
-                        <option>Load1</option>
-                        <option>Load2</option>
-                        <option>Load3</option>
-                      </Input>
-                    </FormGroup>
-                    <FormGroup>
-                      <Label for="backdrop">Rules</Label>{' '}
-                      <Input type="select" name="backdrop" id="backdrop" onChange={changeBackdrop}>
-                        <option></option>
-                        <option>Rule1</option>
-                        <option>Rule2</option>
-                        <option>Rule3</option>
-                      </Input>
-                    </FormGroup>
-                    <FormGroup>
-                      <Label for="backdrop">Format</Label>{' '}
-                      <Input type="select" name="backdrop" id="backdrop" onChange={changeBackdrop}>
-                        <option></option>
-                        <option>Format1</option>
-                        <option>Format2</option>
-                        <option>Format3</option>
-                      </Input>
-                    </FormGroup>
-                  </Form>
-                  </div>
-              </Form>
+                <ModalQualityControl buttonLabel={"Generate"}/>
               </CardBody>
             </Card>
           </Col>
@@ -79,42 +31,32 @@ const ReportPage = (props) => {
         <Row>
           <Col md="6" sm="12" xs="12">
             <Card>
-              <CardHeader><b>Missing Values: Before Rules</b></CardHeader>
-              <CardBody>
-              before rules established
-              </CardBody>
+              <CardHeader 
+                  action={
+                          <IconButton aria-label="settings">
+                            <MenuQualityControl/>
+                          </IconButton>
+                        }
+                  title="Missing Values: Before"
+                />
+                <CardBody>
+                  before control established
+                </CardBody>
             </Card>
           </Col>
 
           <Col md="6" sm="12" xs="12">
             <Card>
-              <CardHeader><b>Missing Values: After Rules </b>
-                <Button size="sm" color="primary">Establish Rules</Button>
-              </CardHeader>
+              <CardHeader 
+                action={
+                        <IconButton aria-label="settings">
+                          <MenuQualityControl/>
+                        </IconButton>
+                      }
+                title="Missing Values: After"
+               />
               <CardBody>
-                after rules established
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col md="6" sm="12" xs="12">
-            <Card>
-              <CardHeader><b>Bad Values: Before Rules</b></CardHeader>
-              <CardBody>
-              before rules established
-              </CardBody>
-            </Card>
-          </Col>
-
-          <Col md="6" sm="12" xs="12">
-            <Card>
-              <CardHeader><b>Bad Values: After Rules </b>
-                <Button size="sm" color="primary">Establish Rules</Button>
-              </CardHeader>
-              <CardBody>
-                after rules established
+                after control established
               </CardBody>
             </Card>
           </Col>
@@ -123,42 +65,32 @@ const ReportPage = (props) => {
         <Row>
           <Col md="6" sm="12" xs="12">
             <Card>
-              <CardHeader><b>Outliers: Before Rules</b></CardHeader>
-              <CardBody>
-              before rules established
-              </CardBody>
+              <CardHeader 
+                action={
+                        <IconButton aria-label="settings">
+                          <MenuQualityControl/>
+                        </IconButton>
+                      }
+                title="Bad Values: Before"
+              />
+                <CardBody>
+                  before control established
+                </CardBody>
             </Card>
           </Col>
 
           <Col md="6" sm="12" xs="12">
             <Card>
-              <CardHeader><b>Outliers: After Rules </b>
-                <Button size="sm" color="primary">Establish Rules</Button>
-              </CardHeader>
+              <CardHeader 
+                  action={
+                          <IconButton aria-label="settings">
+                            <MenuQualityControl/>
+                          </IconButton>
+                        }
+                  title="Bad Values: After"
+              />
               <CardBody>
-                after rules established
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col md="6" sm="12" xs="12">
-            <Card>
-              <CardHeader><b>Categorical: Before Rules</b></CardHeader>
-              <CardBody>
-              before rules established
-              </CardBody>
-            </Card>
-          </Col>
-
-          <Col md="6" sm="12" xs="12">
-            <Card>
-              <CardHeader><b>Categorical: After Rules </b>
-                <Button size="sm" color="primary">Establish Rules</Button>
-              </CardHeader>
-              <CardBody>
-                after rules established
+                after control established
               </CardBody>
             </Card>
           </Col>
@@ -167,20 +99,32 @@ const ReportPage = (props) => {
         <Row>
           <Col md="6" sm="12" xs="12">
             <Card>
-              <CardHeader><b>Feature Scaling: Before Rules</b></CardHeader>
+            <CardHeader 
+                action={
+                        <IconButton aria-label="settings">
+                          <MenuQualityControl/>
+                        </IconButton>
+                      }
+                title="Outliers: Before"
+            />
               <CardBody>
-              before rules established
+                before control established
               </CardBody>
             </Card>
           </Col>
 
           <Col md="6" sm="12" xs="12">
             <Card>
-              <CardHeader><b>Feature Scaling: After Rules </b>
-                <Button size="sm" color="primary">Establish Rules</Button>
-              </CardHeader>
+            <CardHeader 
+                  action={
+                          <IconButton aria-label="settings">
+                            <MenuQualityControl/>
+                          </IconButton>
+                        }
+                  title="Outliers: After"
+            />
               <CardBody>
-                after rules established
+                after control established
               </CardBody>
             </Card>
           </Col>
@@ -189,7 +133,7 @@ const ReportPage = (props) => {
         <Row>
           <Col>
             <Card className="mb-3">
-              <CardHeader>Current Rules Established</CardHeader>
+              <CardHeader>Current controls Established</CardHeader>
               <CardBody>
                 <Table responsive>
                   <thead>
@@ -220,7 +164,7 @@ const ReportPage = (props) => {
           </Col>
         </Row>
         <br />
-        <Button color="secondary">Save Rules and Generate Report</Button>
+        <Button outline color="secondary">Save Quality Control and Generate</Button>
       </Page>
     );
   };

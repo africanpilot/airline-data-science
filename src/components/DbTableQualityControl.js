@@ -37,66 +37,27 @@ ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
 ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
 };
 
-export default function DbTable() {
+export default function DbTableQualityControl() {
   const [state, setState] = React.useState({
     columns: [
-      { title: 'Name', field: 'name', fixed: true },
-      { title: 'Department', field: 'department' },
-      { title: 'Data Load', field: 'dataLoad'},
-      { title: 'QC Rules', field: 'qcRules'},
-      { title: 'QC Format', field: 'qcFormat'},
-      { title: 'Data Analysis', field: 'dataAnalysis'},
-      { title: 'ML Model', field: 'mlModel'},
-      { title: 'Process ML Model', field: 'processMlModel'},
-      { title: 'DL Model', field: 'dlModel'},
-      { title: 'Process DL Model', field: 'processDlModel'},
-      { title: 'Evaluate Models', field: 'evaluateModels'},
-      { title: 'Evaluate Case', field: 'evaluateCase'},
-      { title: 'Presentation', field: 'presentation'},
+      { title: 'Qc Name', field: 'qcName',},
+      { title: 'Use Case', field: 'useCase' },
+      { title: 'Rule Count', field: 'ruleCount'},
+      { title: 'Format', field: 'format'},
     ],
     data: [
-      { name: 'Use Case1', department: 'Safety', dataLoad: 'web Api',
-        qcRules: 'rules1', qcFormat: 'format1', dataAnalysis: 'analysis1',
-        mlModel: 'model1', processMlModel:'process1', dlModel: 'model1',
-        processDlModel: 'process1', evaluateModels: 'evaluate1',
-        evaluateCase: 'evaluate1', presentation: 'presentation1'
-      },
-      { name: 'Use Case2', department: 'Safety', dataLoad: 'web Api',
-        qcRules: 'rules1', qcFormat: 'format1', dataAnalysis: 'analysis1',
-        mlModel: 'model1', processMlModel:'process1', dlModel: 'model1',
-        processDlModel: 'process1', evaluateModels: 'evaluate1',
-        evaluateCase: 'evaluate1', presentation: 'presentation1'
-      },
-      { name: 'Use Case3', department: 'Safety', dataLoad: 'web Api',
-        qcRules: 'rules1', qcFormat: 'format1', dataAnalysis: 'analysis1',
-        mlModel: 'model1', processMlModel:'process1', dlModel: 'model1',
-        processDlModel: 'process1', evaluateModels: 'evaluate1',
-        evaluateCase: 'evaluate1', presentation: 'presentation1'
-      },
-      { name: 'Use Case4', department: 'Safety', dataLoad: 'web Api',
-        qcRules: 'rules1', qcFormat: 'format1', dataAnalysis: 'analysis1',
-        mlModel: 'model1', processMlModel:'process1', dlModel: 'model1',
-        processDlModel: 'process1', evaluateModels: 'evaluate1',
-        evaluateCase: 'evaluate1', presentation: 'presentation1'
-      },
-      { name: 'Use Case5', department: 'Safety', dataLoad: 'web Api',
-        qcRules: 'rules1', qcFormat: 'format1', dataAnalysis: 'analysis1',
-        mlModel: 'model1', processMlModel:'process1', dlModel: 'model1',
-        processDlModel: 'process1', evaluateModels: 'evaluate1',
-        evaluateCase: 'evaluate1', presentation: 'presentation1'
-      },
-      { name: 'Use Case6', department: 'Safety', dataLoad: 'web Api',
-        qcRules: 'rules1', qcFormat: 'format1', dataAnalysis: 'analysis1',
-        mlModel: 'model1', processMlModel:'process1', dlModel: 'model1',
-        processDlModel: 'process1', evaluateModels: 'evaluate1',
-        evaluateCase: 'evaluate1', presentation: 'presentation1'
-      },
+      { qcName: 'Quality Control 1', useCase: 'Use Case 1', ruleCount: 3, format: 'Format 1',},
+      { qcName: 'Quality Control 2', useCase: 'Use Case 2', ruleCount: 7, format: 'Format 2',},
+      { qcName: 'Quality Control 3', useCase: 'Use Case 3', ruleCount: 12, format: 'Format 3',},
+      { qcName: 'Quality Control 4', useCase: 'Use Case 4', ruleCount: 6, format: 'Format 4',},
+      { qcName: 'Quality Control 5', useCase: 'Use Case 5', ruleCount: 4, format: 'Format 5',},
+      { qcName: 'Quality Control 6', useCase: 'Use Case 6', ruleCount: 10, format: 'Format 6',},
     ],
   });
 
   return (
     <MaterialTable
-      title="Use Cases"
+      title="Quality Controls"
       icons={tableIcons}
       columns={state.columns}
       data={state.data}
@@ -105,7 +66,11 @@ export default function DbTable() {
                       left: 2,
                       right: 0
                     },
-                    tableLayout: 'fixed'
+                    tableLayout: 'fixed',
+                    pageSize: 1,
+                    pageSizeOptions:[1,5,10,20],
+                    selection: true,
+                    rowStyle: rowData => ({ backgroundColor: rowData.tableData.checked ? '#37b15933' : '' })
                   }}
       editable={{
         onRowUpdate: (newData, oldData) =>

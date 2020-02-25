@@ -1,9 +1,9 @@
 import Page from 'components/Page';
 import React from 'react';
-import { Card, CardBody,  CardHeader,  Col,  Row,
-  Table, Button
-  } from 'reactstrap';
-  import {Redirect } from 'react-router-dom';
+import { Card, CardBody,  CardHeader,  Col, Table,  Row, Button} from 'reactstrap';
+import {Redirect } from 'react-router-dom';
+import DbTableQualityControl from 'components/DbTableQualityControl';
+
 
 // const today = new Date();
 
@@ -38,10 +38,12 @@ class DataQualityAssessmentPage extends React.Component {
         <Row>
         <Col xl={25} lg={12} md={12}>
           <Card>
-            <CardHeader>Quality Control</CardHeader>
+            <CardHeader>
+              {this.renderRedirect()}
+              <Button outline color="secondary" onClick={this.setRedirect}>Add Quality Control</Button>
+            </CardHeader>
               <CardBody>
-                  {this.renderRedirect()}
-                    <Button outline color="primary" onClick={this.setRedirect}>Generate Report</Button>
+              <DbTableQualityControl/>
               </CardBody>
             </Card>
           </Col>
@@ -50,31 +52,59 @@ class DataQualityAssessmentPage extends React.Component {
         <Row>
           <Col>
             <Card className="mb-3">
-              <CardHeader>Rules</CardHeader>
+              <CardHeader>Quality Control Type</CardHeader>
               <CardBody>
                 <Table responsive>
                   <thead>
                     <tr>
-                      <th>#</th>
-                      <th>Name</th>
-                      <th>Project</th>
-                      <th>Rule Count</th>
-                      <th>View</th>
-                      <th>Edit</th>
-                      <th>Delete</th>
+                      <th>Quality Control Type</th>
+                      <th>Method</th>
                     </tr>
                   </thead>
                   <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Rule1</td>
-                    <td>Global</td>
-                    <td>7</td>
-                    <td><Button outline color="success">View</Button></td>
-                    <td><Button outline color="info">Edit</Button></td>
-                    <td><Button outline color="danger">Remove</Button></td>
+                    <td>Missing Values</td>
+                    <td>Fillna</td>
+                  </tr>
+                  <tr>
+                    <td>Bad Values</td>
+                    <td>Replace</td>
+                  </tr>
+                  <tr>
+                    <td>Outliers</td>
+                    <td>Remove 3 Standard Deviations</td>
                   </tr>
                   </tbody>
+                </Table>
+              </CardBody>
+            </Card>
+          </Col>
+
+          <Col>
+            <Card className="mb-3">
+              <CardHeader>Quality Control Formats</CardHeader>
+              <CardBody>
+                <Table responsive>
+                    <thead>
+                      <tr>
+                        <th>Format</th>
+                        <th># Sections</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>Format 1</td>
+                      <td>6</td>
+                    </tr>
+                    <tr>
+                      <td>Format 2</td>
+                      <td>8</td>
+                    </tr>
+                    <tr>
+                      <td>Format 3</td>
+                      <td>4</td>
+                    </tr>
+                    </tbody>
                 </Table>
               </CardBody>
             </Card>
