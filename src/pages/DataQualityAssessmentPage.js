@@ -41,7 +41,7 @@ class DataQualityAssessmentPage extends React.Component {
             <CardHeader>Quality Control</CardHeader>
               <CardBody>
                   {this.renderRedirect()}
-                    <Button color="primary" onClick={this.setRedirect}>Generate Report</Button>
+                    <Button outline color="primary" onClick={this.setRedirect}>Generate Report</Button>
               </CardBody>
             </Card>
           </Col>
