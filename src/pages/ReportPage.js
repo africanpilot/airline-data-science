@@ -1,7 +1,7 @@
 import Page from 'components/Page';
 import React from 'react';
 import { Card, CardBody, Col,  Row,
-  Table, Button
+  Button
   } from 'reactstrap';
 import MenuQualityControl from 'components/MenuQualityControl';
 import IconButton from '@material-ui/core/IconButton';
@@ -135,30 +135,7 @@ const ReportPage = (props) => {
             <Card className="mb-3">
               <CardHeader>Current controls Established</CardHeader>
               <CardBody>
-                <Table responsive>
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Rule Type</th>
-                      <th>Method</th>
-                      <th>Applies To</th>
-                      <th>View</th>
-                      <th>Edit</th>
-                      <th>Delete</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Missing Values</td>
-                    <td>Fillna</td>
-                    <td>All Columns</td>
-                    <td><Button outline color="success">View</Button></td>
-                    <td><Button outline color="info">Edit</Button></td>
-                    <td><Button outline color="danger">Remove</Button></td>
-                  </tr>
-                  </tbody>
-                </Table>
+                
               </CardBody>
             </Card>
           </Col>
