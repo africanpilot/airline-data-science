@@ -102,7 +102,7 @@ export default function DbTableCreateUseCase() {
       data={state.data}
       options={{
                     fixedColumns: {
-                      left: 2,
+                      left: 1,
                       right: 0
                     },
                     tableLayout: 'fixed',

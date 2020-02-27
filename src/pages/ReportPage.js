@@ -7,6 +7,8 @@ import MenuQualityControl from 'components/MenuQualityControl';
 import IconButton from '@material-ui/core/IconButton';
 import CardHeader from '@material-ui/core/CardHeader';
 import ModalQualityControl from 'components/ModalQualityControl';
+import MovableRowQualityControl from 'components/MovableRowQualityControl'
+
 
 // const today = new Date();
 
@@ -135,7 +137,7 @@ const ReportPage = (props) => {
             <Card className="mb-3">
               <CardHeader>Current controls Established</CardHeader>
               <CardBody>
-                
+                <MovableRowQualityControl/>
               </CardBody>
             </Card>
           </Col>

@@ -63,7 +63,7 @@ export default function DbTableDataLoad() {
       data={state.data}
       options={{
                     fixedColumns: {
-                      left: 2,
+                      left: 0,
                       right: 0
                     },
                     tableLayout: 'fixed',

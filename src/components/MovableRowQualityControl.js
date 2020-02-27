@@ -1,119 +1,15 @@
-import React from 'react';
-import {
-  Table,
-  Caption,
-  Head,
-  HeaderRow,
-  HeaderCell,
-  Body,
-  Row,
-  Cell,
-  styled,
-  DraggableCell,
-} from '@zendeskgarden/react-tables';
-
+import React, { Component } from 'react';
 
 const { DragDropContext, Droppable, Draggable } = require('react-beautiful-dnd');
-const GripIcon = require('@zendeskgarden/svg-icons/src/12/grip.svg').default;
 
-const DraggableRow = styled(Row)`
-  ${props =>
-    props.isDraggingOver
-      ? `
-    :hover {
-      background-color: inherit !important;
-    }
-  `
-      : ''};
-`;
-
-const StyledCaption = styled(Caption)`
-  line-height: ${props => props.theme.lineHeights.xl};
-  font-size: ${props => props.theme.fontSizes.xl};
-  margin-bottom: ${props => props.theme.space.sm};
-`;
-
-class MovableRowQualityControl extends React.Component {
-  constructor() {
-    super();
-
-    this.setRef = this.setRef.bind(this);
-  }
-
-  getSnapshotBeforeUpdate(prevProps) {
-    if (!this.ref) {
-      return null;
-    }
-
-    const isDragStarting = this.props.isDragOccurring && !prevProps.isDragOccurring;
-
-    if (!isDragStarting) {
-      return null;
-    }
-
-    const { width, height } = this.ref.getBoundingClientRect();
-
-    const snapshot = {
-      width,
-      height
-    };
-
-    return snapshot;
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    const ref = this.ref;
-
-    if (!ref) {
-      return;
-    }
-
-    if (snapshot) {
-      if (ref.style.width === snapshot.width) {
-        return;
-      }
-      ref.style.width = `${snapshot.width}px`;
-      ref.style.maxWidth = `${snapshot.width}px`;
-      ref.style.height = `${snapshot.height}px`;
-      return;
-    }
-
-    if (this.props.isDragOccurring) {
-      return;
-    }
-
-    // inline styles not applied
-    if (ref.style.width == null) {
-      return;
-    }
-
-    // no snapshot and drag is finished - clear the inline styles
-    ref.style.removeProperty('height');
-    ref.style.removeProperty('width');
-    ref.style.removeProperty('maxWidth');
-  }
-
-  setRef(ref) {
-    this.ref = ref;
-  }
-
-  render() {
-    return <Cell ref={this.setRef}>{this.props.children}</Cell>;
-  }
-}
-
-const DraggableContainer = styled.div`
-  :focus {
-    outline: none;
-  }
-`;
-
+// fake data generator
 const getItems = count =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
     id: `item-${k}`,
-    content: `item ${k}`
+    content: `item ${k}`,
   }));
 
+// a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
@@ -122,94 +18,87 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
-class DraggableExample extends React.Component {
-  constructor(props) {
-    super(props);
+const grid = 8;
+
+const getItemStyle = (isDragging, draggableStyle) => ({
+  // some basic styles to make the items look a bit nicer
+  userSelect: 'none',
+  padding: grid * 2,
+  margin: `0 0 ${grid}px 0`,
+
+  // change background colour if dragging
+  background: isDragging ? 'lightgreen' : 'red',
+
+  // styles we need to apply on draggables
+  ...draggableStyle,
+});
+
+const getListStyle = isDraggingOver => ({
+  background: isDraggingOver ? 'lightblue' : 'grey',
+  padding: grid,
+  width: 250,
+});
+
+export default class MovableRowQualityControl extends Component {
+  constructor(props, context) {
+    super(props, context);
+    // eslint-disable-next-line react/state-in-constructor
     this.state = {
-      items: getItems(10)
+      items: getItems(10),
     };
     this.onDragEnd = this.onDragEnd.bind(this);
   }
 
   onDragEnd(result) {
+    // dropped outside the list
     if (!result.destination) {
       return;
     }
 
-    const items = reorder(this.state.items, result.source.index, result.destination.index);
-
-    this.setState(
-      {
-        items
-      },
-      () => {
-        document.getElementById(result.draggableId).focus();
-      }
+    const items = reorder(
+      this.state.items,
+      result.source.index,
+      result.destination.index,
     );
+
+    this.setState({
+      items,
+    });
   }
 
+  // Normally you would want to split things out into separate components.
+  // But in this example everything is just done in one place for simplicity
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <Table>
-          <StyledCaption>Your Unsolved Tickets</StyledCaption>
-          <Head>
-            <HeaderRow>
-              <HeaderCell isMinimum />
-              <HeaderCell>Subject</HeaderCell>
-              <HeaderCell>Requester</HeaderCell>
-              <HeaderCell>Requested</HeaderCell>
-              <HeaderCell>Type</HeaderCell>
-            </HeaderRow>
-          </Head>
-          <Droppable droppableId="droppable">
-            {(provided, droppableSnapshot) => {
-              return (
-                <Body ref={provided.innerRef} isDraggingOver={droppableSnapshot.isDraggingOver}>
-                  {this.state.items.map((item, index) => (
-                    <Draggable key={item.id} draggableId={item.id} index={index}>
-                      {(provided, snapshot) => (
-                        <DraggableRow
-                          ref={provided.innerRef}
-                          isDragging={snapshot.isDragging}
-                          isDraggingOver={droppableSnapshot.isDraggingOver}
-                          isHovered={snapshot.isDragging}
-                          isFocused={
-                            droppableSnapshot.isDraggingOver ? snapshot.isDragging : undefined
-                          }
-                          {...provided.draggableProps.style}
-                          {...provided.draggableProps}
-                        >
-                          <DraggableCell isMinimum isDragOccurring={snapshot.isDragging}>
-                            <DraggableContainer id={item.id} {...provided.dragHandleProps}>
-                              <GripIcon />
-                            </DraggableContainer>
-                          </DraggableCell>
-                          <DraggableCell isDragOccurring={snapshot.isDragging}>
-                            {item.content}
-                          </DraggableCell>
-                          <DraggableCell isDragOccurring={snapshot.isDragging}>
-                            John Smith
-                          </DraggableCell>
-                          <DraggableCell isDragOccurring={snapshot.isDragging}>
-                            15 minutes ago
-                          </DraggableCell>
-                          <DraggableCell isDragOccurring={snapshot.isDragging}>
-                            Ticket
-                          </DraggableCell>
-                        </DraggableRow>
+        <Droppable droppableId="droppable">
+          {(droppableProvided, droppableSnapshot) => (
+            <div
+              ref={droppableProvided.innerRef}
+              style={getListStyle(droppableSnapshot.isDraggingOver)}
+            >
+              {this.state.items.map((item, index) => (
+                <Draggable key={item.id} draggableId={item.id} index={index}>
+                  {(draggableProvided, draggableSnapshot) => (
+                    <div
+                      ref={draggableProvided.innerRef}
+                      {...draggableProvided.draggableProps}
+                      {...draggableProvided.dragHandleProps}
+                      style={getItemStyle(
+                        draggableSnapshot.isDragging,
+                        draggableProvided.draggableProps.style,
                       )}
-                    </Draggable>
-                  ))}
-                  {provided.placeholder}
-                </Body>
-              );
-            }}
-          </Droppable>
-        </Table>
+                    >
+                      {item.content}
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {droppableProvided.placeholder}
+            </div>
+          )}
+        </Droppable>
       </DragDropContext>
     );
   }
 }
-
-export default MovableRowQualityControl;
