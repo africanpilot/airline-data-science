@@ -5,8 +5,8 @@ const { DragDropContext, Droppable, Draggable } = require('react-beautiful-dnd')
 // fake data generator
 const getItems = count =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
-    id: `item-${k}`,
-    content: `item ${k}`,
+    id: `Quality Contol-${k}`,
+    content: `Quality Contol ${k}`,
   }));
 
 // a little function to help us with reordering the result
@@ -27,16 +27,15 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   margin: `0 0 ${grid}px 0`,
 
   // change background colour if dragging
-  background: isDragging ? 'lightgreen' : 'red',
-
+  background: isDragging ? '#43cea2' : 'white',
+  border: isDragging ? '1px solid #43cea2' : '1px solid #185a9d',
   // styles we need to apply on draggables
   ...draggableStyle,
 });
 
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? 'lightblue' : 'grey',
+  // background: isDraggingOver ? 'lightblue' : 'white',
   padding: grid,
-  width: 250,
 });
 
 export default class MovableRowQualityControl extends Component {

@@ -1,11 +1,12 @@
 import Page from 'components/Page';
 import React from 'react';
 import { Card, CardBody,  CardHeader,  Col,  Row,
-  Table, Button
+  Table,
   } from 'reactstrap';
 import {Redirect } from 'react-router-dom';
 import StickyHeadTable from 'components/StickyHeadTable';
 import DbTableDataLoad from 'components/DbTableDataLoad';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 class LoadDataPage extends React.Component {
   componentDidMount() {
@@ -40,7 +41,7 @@ class LoadDataPage extends React.Component {
             <Card className="mb-3">
               <CardHeader>
               {this.renderRedirect()}
-                <Button outline color="secondary" onClick={this.setRedirect}>Add New Data</Button>
+                <AddCircleIcon fontSize="large" outline color="primary" onClick={this.setRedirect}>Add New Data</AddCircleIcon>
               </CardHeader>
               <CardBody>
                 <DbTableDataLoad/>

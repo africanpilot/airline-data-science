@@ -1,9 +1,9 @@
 import Page from 'components/Page';
 import React from 'react';
-import { Card, CardBody,  CardHeader,  Col, Table,  Row, Button} from 'reactstrap';
+import { Card, CardBody,  CardHeader,  Col, Table,  Row} from 'reactstrap';
 import {Redirect } from 'react-router-dom';
 import DbTableQualityControl from 'components/DbTableQualityControl';
-
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 // const today = new Date();
 
@@ -40,7 +40,7 @@ class DataQualityAssessmentPage extends React.Component {
           <Card>
             <CardHeader>
               {this.renderRedirect()}
-              <Button outline color="secondary" onClick={this.setRedirect}>Add Quality Control</Button>
+              <AddCircleIcon fontSize="large" outline color="primary" onClick={this.setRedirect}>Add Quality Control</AddCircleIcon>
             </CardHeader>
               <CardBody>
               <DbTableQualityControl/>

@@ -10,6 +10,7 @@ import ModalQualityControl from 'components/ModalQualityControl';
 import MovableRowQualityControl from 'components/MovableRowQualityControl'
 
 
+
 // const today = new Date();
 
 const ReportPage = (props) => {
@@ -135,7 +136,7 @@ const ReportPage = (props) => {
         <Row>
           <Col>
             <Card className="mb-3">
-              <CardHeader>Current controls Established</CardHeader>
+              <CardHeader title = "Current Quality Controls Established"/>
               <CardBody>
                 <MovableRowQualityControl/>
               </CardBody>

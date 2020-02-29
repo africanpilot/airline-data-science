@@ -1,10 +1,11 @@
 import Page from 'components/Page';
 import React from 'react';
 import { Card, CardBody,  CardHeader,  Col,  Row,
-  Table, Button, Progress
+  Table, Progress
   } from 'reactstrap';
 import {Redirect } from 'react-router-dom';
 import DbTableCreateUseCase from 'components/DbTableCreateUseCase'
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 
 class CreateUseCasePage extends React.Component {
@@ -40,7 +41,7 @@ class CreateUseCasePage extends React.Component {
             <Card className="mb-3">
               <CardHeader>
                 {this.renderRedirect()}
-                  <Button outline color="secondary" onClick={this.setRedirect}>Add New Use Case</Button>
+                  <AddCircleIcon fontSize="large" outline color="primary" onClick={this.setRedirect}>Add New Use Case</AddCircleIcon>
               </CardHeader>
               <CardBody>
                 <DbTableCreateUseCase/>
