@@ -41,9 +41,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/favicon-96x96.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
+
+        <link rel="stylesheet" href="css/vendor/katex.min.css" />
+        <link rel="stylesheet" href="css/vendor/prism.css" />
+        <link rel="stylesheet" href="css/vendor/notebook.css" />
+        <link rel="stylesheet" href="css/nbpreview.css" />
+
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -74,13 +81,26 @@
       }
     }(window.location))
   </script>
+
   <!-- End Single Page Apps for GitHub Pages -->
+
+<script  src="js/vendor/es5-shim.min.js"></script>
+<script  src="js/vendor/marked.min.js"></script>
+<script  src="js/vendor/ansi_up.min.js"></script>
+<script  src="js/vendor/prism.min.js"></script>
+<script  src="js/vendor/katex.min.js"></script>
+<script  src="js/vendor/katex-auto-render.min.js"></script>
+<script  src="js/vendor/notebook.min.js"></script>
+
+
 </head>
 
 <body>
+  
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
+  
   <div id="root"></div>
   <!--
       This HTML file is a template.
@@ -92,6 +112,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+  
 </body>
 
 </html>

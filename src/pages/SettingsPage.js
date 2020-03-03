@@ -1,11 +1,9 @@
 import Page from 'components/Page';
-// import {FormPageCSV} from './FormPageCSV'
 import React from 'react';
 // import {
-//   Card, CardBody, CardHeader, Col, Form, Row, Table, Button,
-//   Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, FormGroup,
-//   InputGroup, InputGroupText, InputGroupAddon
+//   Col, Row,Card, CardBody
 // } from 'reactstrap';
+
 
 const SettingsPage = (props) => {
 

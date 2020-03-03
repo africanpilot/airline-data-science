@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,
         Form, Input, Label, FormGroup} from 'reactstrap';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 const ModalQualityControl = (props) => {
   const {
@@ -25,7 +24,7 @@ const ModalQualityControl = (props) => {
 
   return (
     <div>
-      <AddCircleIcon outline color="secondary" onClick={toggle}>{buttonLabel}</AddCircleIcon>
+      <Button outline color="secondary" onClick={toggle}>{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Quality Control Selection</ModalHeader>
         <ModalBody>
