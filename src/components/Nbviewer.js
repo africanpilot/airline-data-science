@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Button} from 'reactstrap'
 
 class Nbviewer extends React.Component {
   componentDidMount () {
@@ -14,10 +14,14 @@ class Nbviewer extends React.Component {
 render() {
 
   return (
-    <div>     
-      <input type="file" id="file"/>
-      <div id="notebook-holder"></div>
+    <div>    
+      {/* <input type= "file" id="file" ></input> 
+      <div id= "notebook-holder"></div> */}
+      <Button id="notebook-holder" onClick={this.componentDidMount}>Run</Button>
+      <button  id='mylink'>click me</button>
+      <a href='linkhref.html' id='mylink'>click me</a>
     </div>
+    
   );
 };
 };

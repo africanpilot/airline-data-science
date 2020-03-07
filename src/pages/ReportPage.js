@@ -8,10 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CardHeader from '@material-ui/core/CardHeader';
 import ModalQualityControl from 'components/ModalQualityControl';
 import MovableRowQualityControl from 'components/MovableRowQualityControl'
-import Nbviewer from 'components/Nbviewer.js'
 import Editor from 'components/Editor.js'
-
-
 
 const ReportPage = (props) => {
 
@@ -43,8 +40,7 @@ const ReportPage = (props) => {
                   title="Missing Values: Before"
                 />
                 <CardBody>
-                  <Editor/>
-                  <Nbviewer/>
+                  <Editor/>  
                 </CardBody>
             </Card>
           </Col>
