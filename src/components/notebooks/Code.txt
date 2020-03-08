@@ -1,4 +1,12 @@
 import pandas as pd
-data = [1,2,23,4,4,5]
-df = pd.DataFrame(data)
-display(df)
+import seaborn as sns; sns.set()
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('Wt_Intel.csv')
+
+# ax = df.plot.scatter(x='Weight', y='Intelligence')
+# plt.scatter(x='Weight', y='Intelligence')
+
+ax = sns.scatterplot(x='Weight', y='Intelligence'
+    ,hue='Species_Code', data=df)
+
