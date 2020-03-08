@@ -17,6 +17,7 @@ const ConnectDataPage = React.lazy(() => import('pages/ConnectDataPage'));
 const DataQualityAssessmentPage = React.lazy(() => import('pages/DataQualityAssessmentPage'));
 const ReportPage = React.lazy(() => import('pages/ReportPage'));
 const DataAnalysisPage = React.lazy(() => import('pages/DataAnalysisPage'));
+const DataAnalysisBuildPage = React.lazy(() => import('pages/DataAnalysisBuildPage'));
 const MLModelsPage = React.lazy(() => import('pages/MLModelsPage'));
 const CreateModelPage = React.lazy(() => import('pages/CreateModelPage'));
 const ProcessModelPage = React.lazy(() => import('pages/ProcessModelPage'));
@@ -63,6 +64,7 @@ class App extends React.Component {
                 <Route exact path="/DataQualityAssessmentPage" component={DataQualityAssessmentPage} />
                 <Route exact path="/ReportPage" component={ReportPage} />
                 <Route exact path="/DataAnalysisPage" component={DataAnalysisPage} />
+                <Route exact path="/DataAnalysisBuildPage" component={DataAnalysisBuildPage} />
                 <Route exact path="/MLModelsPage" component={MLModelsPage} />
                 <Route exact path="/CreateModelPage" component={CreateModelPage} />
                 <Route exact path="/ProcessModelPage" component={ProcessModelPage} />

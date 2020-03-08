@@ -18,7 +18,7 @@ def main():
     with open('Code_Input.ipynb') as f:
         nb = nbf.read(f, as_version=4)
 
-    ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
+    ep = ExecutePreprocessor(timeout=600, kernel_name='python3',allow_errors=True)
     ep.preprocess(nb, {'metadata': {'path': ''}})
 
     with open('Code_Output.ipynb', 'w', encoding='utf-8') as f:

@@ -1,32 +1,16 @@
 import React from 'react';
 import AceEditor from "react-ace";
-import { Card, CardBody, Col,  Row,
-  Button
-  } from 'reactstrap';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import SaveIcon from '@material-ui/icons/Save';
 import JupViewer from 'components/JupViewer.js'
-
+import textCode from 'components/notebooks/Code.txt'
 import "ace-builds/src-min-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/snippets/python";
 import "ace-builds/src-noconflict/theme-tomorrow";
-import textCode from 'components/notebooks/Code.txt'
+
 
 const ipynb = require('components/notebooks/Code_Output.ipynb')
-const writeFileP = require("write-file-p");
-const fs = require('fs') 
-
-// function saveCode(newValue) {
-//   writeFileP(`${__dirname}/Code2.txt`, newValue, (err, data) => {
-//         console.log(err || data);
-//     });
-// }
-
-// Write a text file
-// writeFileP(`${__dirname}/components/notebooks/Code2.txt`, this.state.newCode, (err, data) => {
-//     console.log(err || data);
-// });
 
 class Editor extends React.Component {
 
@@ -75,27 +59,24 @@ downloadTxtFile = () => {
 render() {
   return (
     <div>
-    <AceEditor
-    mode="python"
-    theme="tomorrow"
-    width="inherit"
-    maxLines={Infinity}
-    onChange={this.onChange}
-    name="UNIQUE_ID_OF_DIV"
-    value={this.state.code}
-    editorProps={{ $blockScrolling: true }}
-    enableBasicAutocompletion={true}
-    enableLiveAutocompletion={true}
-    enableSnippets={true}
-  />
-  <br/>
-  <PlayCircleOutlineIcon color="primary" onClick={this._onButtonClick}/>
-  <SaveIcon color="primary" onClick={this.downloadTxtFile}/>
-  {this.state.showComponent ?
-           <JupViewer file={ipynb}/> :
-           null
-        }
-    </div>
+      <AceEditor
+      mode="python"
+      theme="tomorrow"
+      width="inherit"
+      maxLines={Infinity}
+      onChange={this.onChange}
+      name="UNIQUE_ID_OF_DIV"
+      value={this.state.code}
+      editorProps={{ $blockScrolling: true }}
+      enableBasicAutocompletion={true}
+      enableLiveAutocompletion={true}
+      enableSnippets={true}
+    />
+    <br/>
+    <PlayCircleOutlineIcon color="primary" onClick={this._onButtonClick}/>
+    <SaveIcon color="primary" onClick={this.downloadTxtFile}/>
+    {this.state.showComponent ? <JupViewer file={ipynb}/> :null}
+  </div>
   );
 };
 };

@@ -4,55 +4,88 @@ import React from 'react';
 import {
   Card, CardBody, CardHeader, Col, Row, Table, Button,
 } from 'reactstrap';
+import {Redirect } from 'react-router-dom';
+import DbTableDataAnalysis from 'components/DbTableDataAnalysis';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
-const DataAnalysisPage = (props) => {
+class DataAnalysisPage extends React.Component {
+  componentDidMount() {
+    // this is needed, because InfiniteCalendar forces window scroll
+    window.scrollTo(0, 0);
+  }
+
+  state = {
+    redirect: false
+  }
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/DataAnalysisBuildPage' />
+    }
+  }
+
+  render() {
 
   return (
-    <Page title="Data Analysis" breadcrumbs={[{ name: 'Data Analysis', active: true }]}>
+    <Page className="DataAnalysisPage" title="Data Analysis" breadcrumbs={[{ name: 'Data Analysis', active: true }]}>
       <Row>
       <Col xl={25} lg={12} md={12}>
         <Card>
-          <CardHeader>Data Analysis</CardHeader>
+        <CardHeader>
+              {this.renderRedirect()}
+                <AddCircleIcon fontSize="large" outline color="primary" onClick={this.setRedirect}>Data Analysis Build</AddCircleIcon>
+              </CardHeader>
             <CardBody>
-                <Button color="primary">Data Analysis</Button>
+                <DbTableDataAnalysis/>
             </CardBody>
           </Card>
         </Col>
       </Row>
 
       <Row>
-        <Col>
-          <Card className="mb-3">
-            <CardHeader>Data Analysis</CardHeader>
-            <CardBody>
-              <Table responsive>
-                <thead>
+          <Col xl={8} lg={12} md={12}>
+            <Card>
+              <CardHeader>Analysis Preview</CardHeader>
+                <CardBody>
+                </CardBody>
+            </Card>
+          </Col>
+          <Col xl={4} lg={12} md={12}>
+            <Card>
+              <CardHeader>Stats</CardHeader>
+                <CardBody>
+                <Table responsive>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Version</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                   <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Project</th>
-                    <th>View</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <td>Bar Chart</td>
+                    <td>V2.3.4</td>
                   </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>DataAnalysis1</td>
-                  <td>Project1</td>
-                  <td><Button outline color="success">View</Button></td>
-                  <td><Button outline color="info">Edit</Button></td>
-                  <td><Button outline color="danger">Remove</Button></td>
-                </tr>
-                </tbody>
-              </Table>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
+                  <tr>
+                    <td>Scatter Plot</td>
+                    <td>V2.3.4</td>
+                  </tr>
+                  <tr>
+                    <td>Table</td>
+                    <td>V2.3.4</td>
+                  </tr>
+                  </tbody>
+                </Table>
+                </CardBody>
+            </Card>
+          </Col>
+        </Row>
     </Page>
   );
-};
-
+}
+}
 export default DataAnalysisPage;
