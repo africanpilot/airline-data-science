@@ -10,6 +10,10 @@
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^10.0.0",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.0",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
     "@zendeskgarden/react-tables": "^8.0.1",
     "@zendeskgarden/react-theming": "^8.0.1",
     "@zendeskgarden/svg-icons": "^6.12.0",
@@ -49,6 +53,7 @@
     "react-simple-maps": "^0.12.1",
     "react-sizeme": "^2.6.12",
     "reactstrap": "^8.4.1",
+    "typescript": "^3.8.3",
     "victory": "^34.1.2",
     "write-file-p": "^1.0.7"
   },

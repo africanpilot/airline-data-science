@@ -56,7 +56,7 @@ export default function DbTableDataAnalysis() {
 
   return (
     <MaterialTable
-      title="Data Loads"
+      title="Data Analysis Builds"
       icons={tableIcons}
       columns={state.columns}
       data={state.data}
