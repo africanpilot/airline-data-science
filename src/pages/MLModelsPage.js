@@ -4,7 +4,10 @@ import { Card, CardBody,  CardHeader,  Col,  Row,
   Table, Button
   } from 'reactstrap';
   import {Redirect } from 'react-router-dom';
+  import DbTableMlModels from 'components/DbTableMlModels';
+  import AddCircleIcon from '@material-ui/icons/AddCircle';
 
+  
 // const today = new Date();
 
 class MLModelsPage extends React.Component {
@@ -43,25 +46,18 @@ class MLModelsPage extends React.Component {
     return (
       <Page
         className="MLModelsPage"
-        title="Machine Learning Models"
+        title="ML Models"
         breadcrumbs={[{ name: 'Machine Learning Models', active: true }]}
       >
         <Row>
-          <Col>
-            <Card className="mb-3">
-              <CardHeader>Create New Models</CardHeader>
+        <Col xl={25} lg={12} md={12}>
+          <Card>
+            <CardHeader>
+              {this.renderRedirectCreate()}
+              <AddCircleIcon fontSize="large" outline color="primary" onClick={this.setRedirectCreate}>Add ML Model</AddCircleIcon>
+            </CardHeader>
               <CardBody>
-                {this.renderRedirectCreate()}
-                <Button color="primary" onClick={this.setRedirectCreate}>Create Model</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col>
-            <Card className="mb-3">
-              <CardHeader>Process Current Models</CardHeader>
-              <CardBody>
-              {this.renderRedirectProcess()}
-                <Button color="primary"  onClick={this.setRedirectProcess}>Process Model</Button>
+              <DbTableMlModels/>
               </CardBody>
             </Card>
           </Col>
@@ -72,77 +68,74 @@ class MLModelsPage extends React.Component {
             <Card className="mb-3">
               <CardHeader>Model</CardHeader>
               <CardBody>
-              <Table responsive>
-                <thead>
+                <Table responsive>
+                  <thead>
+                    <tr>
+                      <th>Model Info</th>
+                      <th>Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                   <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Project</th>
-                    <th>Category</th>
-                    <th>SubCategory</th>
-                    <th>Class</th>
-                    <th>Algorithm</th>
-                    <th>View</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <td>Version</td>
+                    <td>V2.3.4</td>
                   </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Model1</td>
-                  <td>Global</td>
-                  <td>SupervisedLearning</td>
-                  <td>Classification</td>
-                  <td>Two-Class</td>
-                  <td>SVM</td>
-                  <td><Button outline color="success">View</Button></td>
-                  <td><Button outline color="info">Edit</Button></td>
-                  <td><Button outline color="danger">Remove</Button></td>
-                </tr>
-                </tbody>
-              </Table>
+                  <tr>
+                    <td>Use Cases</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Class</td>
+                    <td>Two-Class</td>
+                  </tr>
+                  <tr>
+                    <td>Algorithm</td>
+                    <td>SVM</td>
+                  </tr>
+                  </tbody>
+                </Table>
               </CardBody>
             </Card>
           </Col>
+
           <Col>
             <Card className="mb-3">
-              <CardHeader>Model Processing</CardHeader>
+              <CardHeader>Process Model</CardHeader>
               <CardBody>
-              <Table responsive>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Project</th>
-                    <th>Model</th>
-                    <th>Target</th>
-                    <th>Data Partition</th>
-                    <th>Training</th>
-                    <th>Validating</th>
-                    <th>Testing</th>
-                    <th>View</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                  </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Processing1</td>
-                  <td>Global</td>
-                  <td>Model1</td>
-                  <td>Column1</td>
-                  <td>Split 60|20|20</td>
-                  <td>Method1</td>
-                  <td>Method1</td>
-                  <td>Method1</td>
-                  <td><Button outline color="success">View</Button></td>
-                  <td><Button outline color="info">Edit</Button></td>
-                  <td><Button outline color="danger">Remove</Button></td>
-                </tr>
-                </tbody>
-              </Table>
+                <Table responsive>
+                    <thead>
+                      <tr>
+                        <th>Process Info</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>Version</td>
+                      <td>V2.3.4</td>
+                    </tr>
+                    <tr>
+                      <td>Tagert</td>
+                      <td> Column 1</td>
+                    </tr>
+                    <tr>
+                      <td>Data Partition</td>
+                      <td>Split 60|20|20</td>
+                    </tr>
+                    <tr>
+                      <td>Training</td>
+                      <td>Method 1</td>
+                    </tr>
+                    <tr>
+                      <td>Validating</td>
+                      <td>Method 1</td>
+                    </tr>
+                    <tr>
+                      <td>Testing</td>
+                      <td>Method 1</td>
+                    </tr>
+                    </tbody>
+                </Table>
               </CardBody>
             </Card>
           </Col>

@@ -10,7 +10,9 @@ import ModalQualityControl from 'components/ModalQualityControl';
 import MovableRowQualityControl from 'components/MovableRowQualityControl'
 import Editor from 'components/Editor.js'
 
-const ReportPage = (props) => {
+class ReportPage extends React.Component {
+
+  render() {
 
     return (
       <Page
@@ -143,7 +145,7 @@ const ReportPage = (props) => {
         <br />
         <Button outline color="secondary">Save Quality Control and Generate</Button>
       </Page>
-    );
-  };
-
+   );
+  }
+}
 export default ReportPage;
