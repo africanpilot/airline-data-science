@@ -16,7 +16,7 @@ You can check out [live preview](https://africanpilot.github.io/airline-data-sci
 
 ## Project Description
 
-The project aims to create a data science platform that is custom made for the airlines. This concept can be 
+The project aims to create a data science platform that is custom made for the airlines. This concept can be
 
 ## More Bootstrap Themes
 
