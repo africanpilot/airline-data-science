@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://africanpilot.github.io/airline-data-science/precache-manifest.2ceed43bec4e6f3b534be9b4fd9f3cde.js"
+  "https://africanpilot.github.io/airline-data-science/precache-manifest.78f90dcb2133bf3bcae48fa86fc2025f.js"
 );
 
 self.addEventListener('message', (event) => {
