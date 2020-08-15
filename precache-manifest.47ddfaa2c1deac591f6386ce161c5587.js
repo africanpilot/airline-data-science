@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1d8737f253d06e7ae83e3e89517836bb",
+    "revision": "c54664f13f841518fbf7c89097ed7a44",
     "url": "https://africanpilot.github.io/airline-data-science/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://africanpilot.github.io/airline-data-science/static/css/18.7d4aa8bf.chunk.css"
   },
   {
-    "revision": "d0a8fef793340dd622c9",
+    "revision": "250fe9909db792f967cc",
     "url": "https://africanpilot.github.io/airline-data-science/static/css/main.24c7ef6a.chunk.css"
   },
   {
@@ -168,8 +168,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://africanpilot.github.io/airline-data-science/static/js/9.b8ade26f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d0a8fef793340dd622c9",
-    "url": "https://africanpilot.github.io/airline-data-science/static/js/main.0726c0b3.chunk.js"
+    "revision": "250fe9909db792f967cc",
+    "url": "https://africanpilot.github.io/airline-data-science/static/js/main.32d2e1c5.chunk.js"
   },
   {
     "revision": "44019584974b4d357cec",

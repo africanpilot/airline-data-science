@@ -11,8 +11,8 @@
     "static/js/4.5230a7fe.chunk.js": "https://africanpilot.github.io/airline-data-science/static/js/4.5230a7fe.chunk.js",
     "static/js/4.5230a7fe.chunk.js.map": "https://africanpilot.github.io/airline-data-science/static/js/4.5230a7fe.chunk.js.map",
     "main.css": "https://africanpilot.github.io/airline-data-science/static/css/main.24c7ef6a.chunk.css",
-    "main.js": "https://africanpilot.github.io/airline-data-science/static/js/main.0726c0b3.chunk.js",
-    "main.js.map": "https://africanpilot.github.io/airline-data-science/static/js/main.0726c0b3.chunk.js.map",
+    "main.js": "https://africanpilot.github.io/airline-data-science/static/js/main.32d2e1c5.chunk.js",
+    "main.js.map": "https://africanpilot.github.io/airline-data-science/static/js/main.32d2e1c5.chunk.js.map",
     "runtime-main.js": "https://africanpilot.github.io/airline-data-science/static/js/runtime-main.8f3cd3dd.js",
     "runtime-main.js.map": "https://africanpilot.github.io/airline-data-science/static/js/runtime-main.8f3cd3dd.js.map",
     "static/js/7.4de6ed9a.chunk.js": "https://africanpilot.github.io/airline-data-science/static/js/7.4de6ed9a.chunk.js",
@@ -63,7 +63,7 @@
     "static/js/28.5a582241.chunk.js": "https://africanpilot.github.io/airline-data-science/static/js/28.5a582241.chunk.js",
     "static/js/28.5a582241.chunk.js.map": "https://africanpilot.github.io/airline-data-science/static/js/28.5a582241.chunk.js.map",
     "index.html": "https://africanpilot.github.io/airline-data-science/index.html",
-    "precache-manifest.0087cf58cea5163e7028079a89ab2415.js": "https://africanpilot.github.io/airline-data-science/precache-manifest.0087cf58cea5163e7028079a89ab2415.js",
+    "precache-manifest.47ddfaa2c1deac591f6386ce161c5587.js": "https://africanpilot.github.io/airline-data-science/precache-manifest.47ddfaa2c1deac591f6386ce161c5587.js",
     "service-worker.js": "https://africanpilot.github.io/airline-data-science/service-worker.js",
     "static/css/13.1dd09bfa.chunk.css.map": "https://africanpilot.github.io/airline-data-science/static/css/13.1dd09bfa.chunk.css.map",
     "static/css/17.aefce985.chunk.css.map": "https://africanpilot.github.io/airline-data-science/static/css/17.aefce985.chunk.css.map",
@@ -99,6 +99,6 @@
     "static/js/runtime-main.8f3cd3dd.js",
     "static/js/12.c9be9d4b.chunk.js",
     "static/css/main.24c7ef6a.chunk.css",
-    "static/js/main.0726c0b3.chunk.js"
+    "static/js/main.32d2e1c5.chunk.js"
   ]
 }
