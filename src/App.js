@@ -34,7 +34,7 @@ const getBasename = () => {
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter basename="/airline-data-science">
+      <BrowserRouter basename={getBasename()}>
         <GAListener>
           <Switch>
             <LayoutRoute
