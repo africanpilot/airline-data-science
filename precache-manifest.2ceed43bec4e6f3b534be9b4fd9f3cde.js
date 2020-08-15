@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dc1a2cd770954b72a23a0deb19e5e7a3",
+    "revision": "6bdb15e677c105334647aed1795b5d7b",
     "url": "https://africanpilot.github.io/airline-data-science/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://africanpilot.github.io/airline-data-science/static/css/18.7e73a9f0.chunk.css"
   },
   {
-    "revision": "2b10a9a06029e4d5a458",
+    "revision": "e2a19f56aac1dcef690a",
     "url": "https://africanpilot.github.io/airline-data-science/static/css/main.ee3b07f7.chunk.css"
   },
   {
@@ -128,12 +128,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://africanpilot.github.io/airline-data-science/static/js/3.11811567.chunk.js"
   },
   {
-    "revision": "2f7208dbb8cc298f2339",
-    "url": "https://africanpilot.github.io/airline-data-science/static/js/4.01341c8c.chunk.js"
+    "revision": "de55119a17dd87d9c792",
+    "url": "https://africanpilot.github.io/airline-data-science/static/js/4.c2c67a1a.chunk.js"
   },
   {
     "revision": "e4a0d87becbcc6d09668875fe197b50f",
-    "url": "https://africanpilot.github.io/airline-data-science/static/js/4.01341c8c.chunk.js.LICENSE.txt"
+    "url": "https://africanpilot.github.io/airline-data-science/static/js/4.c2c67a1a.chunk.js.LICENSE.txt"
   },
   {
     "revision": "eb988ff2463177d8d3ee",
@@ -148,12 +148,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://africanpilot.github.io/airline-data-science/static/js/9.3858266a.chunk.js"
   },
   {
-    "revision": "2b10a9a06029e4d5a458",
-    "url": "https://africanpilot.github.io/airline-data-science/static/js/main.610ce3d2.chunk.js"
+    "revision": "e2a19f56aac1dcef690a",
+    "url": "https://africanpilot.github.io/airline-data-science/static/js/main.1b93ffb9.chunk.js"
   },
   {
-    "revision": "2bcd288eb6fd60364642",
-    "url": "https://africanpilot.github.io/airline-data-science/static/js/runtime-main.28af724a.js"
+    "revision": "56c559961150c656cc45",
+    "url": "https://africanpilot.github.io/airline-data-science/static/js/runtime-main.2b180deb.js"
   },
   {
     "revision": "1f7beca5bf4cda1803cd59cd881c372d",
