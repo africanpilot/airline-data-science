@@ -2,7 +2,7 @@
   "name": "airline-data-science",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://africanpilot.github.io/airline-data-science/",
+  "homepage": "https://africanpilot.github.io/airline-data-science",
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
