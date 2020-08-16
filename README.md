@@ -22,7 +22,10 @@ The project aims to create a data science platform that is custom made for the a
 - [x] Create sidebar pages
 - [x] enable in web code editor 
 - [ ] connect to database
-- [ ] complete ML page
+- [x] data quality control concept
+- [x] data analysis concept
+- [x] ML page concept
 - [ ] complete DL page
 - [ ] complete evaluation sections
 - [ ] presentation section
+- [ ] settings
